@@ -1,0 +1,27 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="ua">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{% block title %}{% endblock %}</title>
+    <link rel="stylesheet" href="{% static 'home/style.css' %}">
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <ul>
+                <li>
+                    <a href="{% url 'home:home' %}">Домівка</a>
+                </li>
+                <li>
+                    <a href="{% url 'articles:articles_list' %}">Статті</a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+    {% block content %}
+        <main></main>
+    {% endblock %}
+</body>
+</html>
